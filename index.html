@@ -10,14 +10,6 @@
     content="Tour dates and video for the Rocky + Tyler Tour."
   >
 
-  <!-- Fast font loading from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -37,16 +29,62 @@
         <h1 id="video-title">Rocky + Tyler Tour</h1>
       </div>
 
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/xT62uGlpXM0"
-          title="Rocky and Tyler Tour video"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </section>
+     <section class="video-section" aria-labelledby="video-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Watch</p>
+      <h1 id="video-title">Rocky + Tyler Tour</h1>
+    </div>
+
+    <div class="video-switcher" aria-label="Choose video source">
+      <button
+        class="video-switcher__button is-active"
+        type="button"
+        data-video-source="youtube"
+        aria-pressed="true"
+      >
+        YouTube
+      </button>
+
+      <button
+        class="video-switcher__button"
+        type="button"
+        data-video-source="github"
+        aria-pressed="false"
+      >
+        Direct video
+      </button>
+    </div>
+  </div>
+
+  <div class="video-frame">
+    <iframe
+      id="youtube-video"
+      class="video-player"
+      src="https://www.youtube-nocookie.com/embed/xT62uGlpXM0"
+      title="Rocky and Tyler Tour video on YouTube"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+    <video
+      id="github-video"
+      class="video-player is-hidden"
+      controls
+      preload="metadata"
+      playsinline
+      poster="assets/images/rocky-tyler-admat-final2.jpg"
+    >
+      <source
+        src="assets/video/rocky-and-tyler.mp4"
+        type="video/mp4"
+      >
+
+      Your browser does not support HTML video.
+    </video>
+  </div>
+</section>
 
     <section class="tour-section" aria-labelledby="tour-title">
       <div class="section-heading">
