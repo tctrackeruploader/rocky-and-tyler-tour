@@ -1,17 +1,32 @@
 @font-face {
-  font-family: "boxcutterregular";
+  font-family: "boxcutter";
   src: url("../assets/fonts/boxcutter-regular.woff2") format("woff2");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
-  font-family: "boxcutterbold";
+  font-family: "boxcutter";
   src: url("../assets/fonts/boxcutter-bold.woff2") format("woff2");
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: "boxcutter";
+  font-weight: 700;
+}
+
+body {
+  color: #000000;
+  background: #ffffff;
 }
 
 #wrapper {
@@ -19,7 +34,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  font-family: "boxcutterbold", Helvetica, Arial, sans-serif;
+  font-family: "boxcutter";
+  font-weight: 700;
 }
 
 #admat {
@@ -28,25 +44,47 @@
 }
 
 #admat img {
+  display: block;
   width: 100%;
+  height: auto;
+}
+
+#video {
+  width: 640px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#video iframe {
+  display: block;
+  width: 640px;
+  max-width: 100%;
+  height: 360px;
+  margin: 0 auto;
+  border: 0;
 }
 
 #tour-dates {
   width: 60%;
   margin: 0 auto;
   padding-top: 30px;
-  font-family: "boxcutterbold", Helvetica, Arial, sans-serif;
+  font-family: "boxcutter";
   font-size: 28px;
+  font-weight: 700;
   line-height: 32px;
   text-align: center;
 }
 
 #tour-dates a {
   color: #000000;
+  font-family: "boxcutter";
+  font-weight: 700;
   text-decoration: none;
 }
 
-#tour-dates a:hover {
+#tour-dates a:hover,
+#tour-dates a:focus {
   text-decoration: underline;
 }
 
@@ -55,18 +93,25 @@
   height: 100px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
   #admat {
     width: 100%;
-    margin: 0 auto;
   }
 
-  #admat img {
+  #video {
     width: 100%;
+  }
+
+  #video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   #tour-dates {
     width: 100%;
+    padding-top: 30px;
     font-size: 15px;
+    line-height: 20px;
   }
 }
